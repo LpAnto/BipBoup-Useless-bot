@@ -1,0 +1,13 @@
+{
+  "name": "bibo",
+  "version": "1.0.0",
+  "description": "yo",
+  "main": "index.js",
+  "author": "Lpanto",
+  "dependencies": {
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "discord.js": "^11.4.2",
+    "eslint": "^5.16.0",
+    "winston": "^3.2.1"
+  }
+}
