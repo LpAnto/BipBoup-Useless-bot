@@ -5,4 +5,4 @@ Just be aware that all the commentary in the scripts are in french, might change
 I used NodeJS and discord.js, wich make the interaction with the Discord API very easy.<br>
 Discord.js official site : https://discord.js.org/ 
 
-![Screenshot_99](https://user-images.githubusercontent.com/46076347/57119230-c7f10a80-6d68-11e9-84c2-fb317160d6e5.png)
+![image](https://user-images.githubusercontent.com/46076347/57171987-6ab59180-6e1a-11e9-947a-567994c19b52.png)
