@@ -19,17 +19,6 @@ client.on('message', message => {
 	console.log(message.content);
 });
 
-client.on('message', message => {
-  //test le bot. (btw je suis resté genre 20 minutes à cause d'une faute de syntaxe juste là)
-  if (message.content === '!test') {
-    message.channel.send('still working.');
-  }
-  //display le nombre de membres
-  else if (message.content === '!server') {
-  	message.channel.send(`Nombre total de membres: ${message.guild.memberCount}`);
-  }
-});
-
 //La commande !reverse permet d'inverser l'ordre des lettres d'un message envoyé par quelqu'un
 //création de la fonction reverseString (j'ai mis 1/2h à pondre cette merde lol)
 function reverseString(str) {
@@ -48,37 +37,45 @@ client.on('message', message => {
 
   const args = message.content.slice(prefix.length).split(' ');
   const command = args.shift().toLowerCase();
-//j'ai un peu la flemme de refaire !test et !server donc je vais les laisser tel quel. en plus comme ça on voit les differentes manière héhé
 
+	//test le bot. (btw je suis resté genre 20 minutes à cause d'une faute de syntaxe juste là)
+	if (command === 'test') {
+    message.channel.send('still working.');
+  }
+  //display le nombre de membres
+  else if (command === 'server') {
+  	message.channel.send(`Nombre total de membres: ${message.guild.memberCount}`);
+  }
 //!avatar [@user#0000] permet d'afficher la photo de profil discord d'une personne ping
- if (command === 'avatar') {
-   if (!message.mentions.users.size) {
-     return message.channel.send(`Your avatar: <${message.author.displayAvatarURL}>`);
-   }
-
- const avatarList = message.mentions.users.map(user => {
-   return `${user.username}'s avatar: <${user.displayAvatarURL}>`;
+	else if (command === 'avatar') {
+  	if (!message.mentions.users.size) {
+    	return message.channel.send(`Your avatar: <${message.author.displayAvatarURL}>`);
+  }
+	const avatarLink = message.mentions.users.map(user => {
+  	return `${user.username}'s avatar: <${user.displayAvatarURL}>`;
  });
-
- message.channel.send(avatarList);
+	message.channel.send(avatarLink);
 }
 //!reverse expliqué plus haut
-else if (command === 'reverse') {
-  if (!args.length) {
+	else if (command === 'reverse') {
+  	if (!args.length) {
       return message.channel.send(`${message.author} t'es con ou quoi ?`);
   }
     var yess = message.content.slice(8);
+		console.log(yess);
     return message.channel.send(reverseString(yess))
   }
+	//je me link lol
   else if (command === 'creator') {
     if (!args.length) {
       return message.channel.send(`les fichiers du bots sont dispo sur mon github héhé : https://github.com/LpAnto/BipBoup-Useless-bot`);
     }
   }
 //petit !help
-else if (command === 'helpp') {
-  if (!args.length) {
-    return message.channel.send(`Voici les differentes commandes :\n!test\n!server\n!avatar\n!reverse\n!creator`);
-  }
-}
+	else if (command === 'helpp') {
+  	if (!args.length) {
+    	return message.channel.send(`Voici les differentes commandes :\n!test\n!server\n!avatar\n!reverse\n!creator`);
+  	}
+	}
 });
+
