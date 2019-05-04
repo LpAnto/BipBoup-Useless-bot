@@ -67,7 +67,7 @@ else if (command === 'reverse') {
   if (!args.length) {
       return message.channel.send(`${message.author} t'es con ou quoi ?`);
   }
-    var yess = message.content.slice(prefix.length);
+    var yess = message.content.slice(8);
     return message.channel.send(reverseString(yess))
   }
   else if (command === 'creator') {
