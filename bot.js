@@ -31,7 +31,7 @@ function reverseString(str) {
     return joinArray; //  ez
 }
 
-//Les ARGUMENT et les COMMANDES héhé (enifn ptn)
+//Les argument et les commandes (enfin ptn)
 client.on('message', message => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -79,3 +79,4 @@ client.on('message', message => {
 	}
 });
 
+//zgeg
